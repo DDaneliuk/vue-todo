@@ -1,6 +1,7 @@
 <template>
-  <div class="counter" v-if="taskAmount">
-    <p>{{ taskDone }}/ {{ taskAmount }} ( {{ percent }}% done)</p>
+  <div class="flex my-4 justify-between" v-if="taskAmount">
+    <h3>{{ taskDone }}/ {{ taskAmount }}</h3>
+    <p> {{ percent }}% Done</p>
   </div>
 </template>
 
@@ -24,9 +25,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.counter {
-  text-align: center;
-  padding: 20px 0;
-}
-</style>

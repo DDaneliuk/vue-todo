@@ -1,10 +1,13 @@
 <template>
-  <div class="modal-delete" v-if="show" @click="hideModal">
-    <div class="modal-content" @click.stop>
-      <p>Are you sure you want to delete task {{ task.taskTitle }}?</p>
-      <div class="btn-group">
-        <button @click="deleteTask">Yes</button>
-        <button @click="hideModal">No</button>
+  <div class="fixed inset-0 flex bg-white " v-if="show" @click="hideModal">
+    <div class="w-fit m-auto p-4 p-8 shadow-2xl shadow-black border-2 border-cyan-500 rounded-lg" @click.stop>
+      <h2 class="text-3xl pb-4 text-center" >Delete Task</h2>
+      <p class="pb-4 text-center">Are you sure you want to delete task {{ task.taskTitle }}?</p>
+      <div class="flex justify-center">
+        <button @click="deleteTask" class="mx-4 text-black border-2 border-cyan-500 rounded-lg px-4 py-2">Yes
+        </button>
+        <button @click="hideModal" class="mx-4 bg-indigo-500 text-white border-2 border-cyan-500 rounded-lg px-4 py-2">No
+        </button>
       </div>
     </div>
   </div>
@@ -33,31 +36,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.modal-delete {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #00000050;
-  position: fixed;
-  display: flex;
-}
-.modal-content {
-  margin: auto;
-  padding: 30px;
-  background-color: #ffffff;
-  z-index: 101;
-}
-.btn-group {
-  display: flex;
-  margin: 30px 0 0;
-  justify-content: center;
-  align-content: center;
-}
-.btn-group button {
-  margin: 0 10px;
-  padding: 10px;
-}
-</style>

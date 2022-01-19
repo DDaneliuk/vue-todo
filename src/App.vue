@@ -1,29 +1,27 @@
 <template>
-  <div class="container">
+  <div class="max-w-screen-md mx-auto my-9 px-8 py-12 shadow-2xl shadow-black border-2 border-cyan-500 rounded-lg">
     <ModalDelete
-      v-model:show="modalDeleteVisible"
-      :task="pickedItem"
-      @delete="deleteTask"
+        v-model:show="modalDeleteVisible"
+        :task="pickedItem"
+        @delete="deleteTask"
     />
     <div class="task-block">
-      <Header :header="header" />
+      <Header :header="header"/>
       <TaskList
-        :tasks="tasks"
-        @isDone="isDone"
-        @showModalDelete="showModalDelete"
+          :tasks="tasks" @isDone="isDone" @showModalDelete="showModalDelete"
       />
-      <TaskForm @create="createTask" />
+      <TaskForm @create="createTask"/>
       <Counter
-        :taskAmount="taskAmount"
-        :taskDone="taskDone"
-        :percent="percentOfDone"
+          :taskAmount="taskAmount"
+          :taskDone="taskDone"
+          :percent="percentOfDone"
       />
       <DoneTaskList
-        :tasks="tasks"
-        :taskDone="taskDone"
-        v-model:showAll="showTasks"
-        @isDone="isDone"
-        @showModalDelete="showModalDelete"
+          :tasks="tasks"
+          :taskDone="taskDone"
+          v-model:showAll="showTasks"
+          @isDone="isDone"
+          @showModalDelete="showModalDelete"
       />
     </div>
   </div>
@@ -36,7 +34,6 @@ import TaskForm from "./components/TaskForm";
 import Header from "./components/Header";
 import ModalDelete from "./components/ModalDelete";
 import Counter from "./components/Counter";
-
 export default {
   components: {
     TaskForm,
@@ -100,17 +97,15 @@ export default {
     },
     decode() {
       let getUrl = location.hash;
-      console.log(getUrl)
-      if (getUrl === ""){
-          this.tasks=[]
-      }
-      else{
+      if (getUrl === "") {
+        this.tasks = []
+      } else {
         let subGetUrl = getUrl.substring(1);
         const tasksJSON = new Array(
-        decodeURIComponent(escape(window.atob(subGetUrl)))
-      );
-      this.tasks = JSON.parse(tasksJSON);
-        }
+            decodeURIComponent(escape(window.atob(subGetUrl)))
+        );
+        this.tasks = JSON.parse(tasksJSON);
+      }
     },
     showAllTasks() {
       this.showTasks = !this.showTasks;
@@ -119,21 +114,6 @@ export default {
 };
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  width: 50%;
-  display: block;
-  margin: 60px auto 30px auto;
-}
-.task-block {
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 20px;
-  border: 1px solid #000;
-}
-</style>
+
+
+

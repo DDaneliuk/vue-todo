@@ -1,13 +1,13 @@
 <template>
   <form @submit.prevent>
-    <div>
+    <div class="flex">
       <input
         v-model="task.taskTitle"
         type="text"
         placeholder="New task..."
-        class="form-input"
+        class="flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"
       />
-      <button class="add-new" @click="createTask">Add</button>
+      <button class="bg-indigo-500 text-white border-2 border-cyan-500 rounded-lg px-4 py-2" @click="createTask">Add</button>
     </div>
   </form>
 </template>
@@ -34,23 +34,3 @@ export default {
 };
 </script>
 
-<style>
-.task-heading {
-  text-align: center;
-}
-.form-input {
-  width: calc(100% - 120px);
-  font-size: 18px;
-  margin-left: 55px;
-  padding: 1px 5px;
-  border: none;
-  border-bottom: 1px dashed #d3d3d3;
-  color: grey;
-}
-.form-input:focus {
-  outline: none;
-}
-button.add-new {
-  padding: 8px 18px;
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="task-heading">
-    <h1>{{ header }}</h1>
+    <h1 class="text-3xl font-bold text-center">{{ header }}</h1>
   </div>
 </template>
 
