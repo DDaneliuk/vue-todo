@@ -53,9 +53,13 @@ export default {
       taskAmount: 0,
       taskDone: 0,
       percentOfDone: 0,
+      encodeData: "",
+      result: "",
     };
   },
   created() {
+    this.decode();
+    this.encode();
     this.updateCounter();
   },
   methods: {
@@ -66,11 +70,15 @@ export default {
     },
     createTask(task) {
       this.tasks.push(task);
+      this.encode();
+      this.decode();
       this.updateCounter();
     },
     deleteTask(task) {
       this.tasks = this.tasks.filter((t) => t.id !== task.id);
       this.modalDeleteVisible = false;
+      this.encode();
+      this.decode();
       this.updateCounter();
     },
     showModalDelete(task) {
@@ -79,7 +87,22 @@ export default {
     },
     isDone(task) {
       task.isDone = !task.isDone;
+      this.encode();
+      this.decode();
       this.updateCounter();
+    },
+    encode() {
+      const taskJSON = JSON.stringify(this.tasks);
+      this.encodeData = window.btoa(unescape(encodeURIComponent(taskJSON)));
+      location.hash = "#" + this.encodeData;
+    },
+    decode() {
+      let getUrl = location.hash;
+      let subGetUrl = getUrl.substring(1);
+      const tasksJSON = new Array(
+        decodeURIComponent(escape(window.atob(subGetUrl)))
+      );
+      this.tasks = JSON.parse(tasksJSON);
     },
   },
 };
