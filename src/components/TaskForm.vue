@@ -1,12 +1,14 @@
 <template>
   <form @submit.prevent>
-    <input
-      v-model="task.taskTitle"
-      type="text"
-      placeholder="New task..."
-      class="form-input"
-    />
-    <button @click="createTask">Add task</button>
+    <div>
+      <input
+        v-model="task.taskTitle"
+        type="text"
+        placeholder="New task..."
+        class="form-input"
+      />
+      <button class="add-new" @click="createTask">Add</button>
+    </div>
   </form>
 </template>
 
@@ -47,5 +49,8 @@ export default {
 }
 .form-input:focus {
   outline: none;
+}
+button.add-new {
+  padding: 8px 18px;
 }
 </style>

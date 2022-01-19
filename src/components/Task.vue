@@ -2,7 +2,7 @@
   <div>
     <div class="task cheked" v-if="task.isDone">
       <a @click="isDone"></a>
-      <p>{{ task.taskTitle }}</p>
+      <p><s>{{ task.taskTitle }}</s></p>
       <button @click="showModalDelete">🗑</button>
     </div>
     <div class="task" v-else>
