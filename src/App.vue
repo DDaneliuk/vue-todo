@@ -20,6 +20,7 @@
       />
       <DoneTaskList
         :tasks="tasks"
+        v-model:showAll="showTasks"
         @isDone="isDone"
         @showModalDelete="showModalDelete"
       />
@@ -54,7 +55,7 @@ export default {
       taskDone: 0,
       percentOfDone: 0,
       encodeData: "",
-      result: "",
+      showTasks: false,
     };
   },
   created() {
@@ -104,6 +105,9 @@ export default {
       );
       this.tasks = JSON.parse(tasksJSON);
     },
+    showAllTasks(){
+      this.showTasks = !this.showTasks;
+    }
   },
 };
 </script>
