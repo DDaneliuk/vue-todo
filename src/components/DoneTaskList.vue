@@ -29,7 +29,9 @@
           :key="task.id"
         />
       </div>
-      <button class="show-all" @click="showAllEmit">Show more</button>
+      <div v-if="taskDone > 5">
+        <button class="show-all" @click="showAllEmit">Show more</button>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +54,10 @@ export default {
       default: false,
       required: true,
     },
+    taskDone: {
+      type: Number,
+      required: true,
+    },
   },
   methods: {
     showAllEmit() {
@@ -65,8 +71,8 @@ export default {
 </script>
 
 <style scoped>
-button.show-all{
-  display:block;
+button.show-all {
+  display: block;
   margin: 0 auto;
   padding: 8px 16px;
 }

@@ -20,6 +20,7 @@
       />
       <DoneTaskList
         :tasks="tasks"
+        :taskDone="taskDone"
         v-model:showAll="showTasks"
         @isDone="isDone"
         @showModalDelete="showModalDelete"
@@ -105,9 +106,9 @@ export default {
       );
       this.tasks = JSON.parse(tasksJSON);
     },
-    showAllTasks(){
+    showAllTasks() {
       this.showTasks = !this.showTasks;
-    }
+    },
   },
 };
 </script>
