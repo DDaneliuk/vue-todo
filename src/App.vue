@@ -100,11 +100,17 @@ export default {
     },
     decode() {
       let getUrl = location.hash;
-      let subGetUrl = getUrl.substring(1);
-      const tasksJSON = new Array(
+      console.log(getUrl)
+      if (getUrl === ""){
+          this.tasks=[]
+      }
+      else{
+        let subGetUrl = getUrl.substring(1);
+        const tasksJSON = new Array(
         decodeURIComponent(escape(window.atob(subGetUrl)))
       );
       this.tasks = JSON.parse(tasksJSON);
+        }
     },
     showAllTasks() {
       this.showTasks = !this.showTasks;
