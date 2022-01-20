@@ -1,6 +1,6 @@
 <template>
   <div class="task-list">
-    <div v-if="showAll">
+    <div v-if="modelValue">
       <div
           class="tasks"
           v-for="task in tasks.filter((item) => item.isDone === true)"
@@ -55,7 +55,7 @@ export default {
       type: Array,
       required: true,
     },
-    showAll: {
+    modelValue: {
       type: Boolean,
       default: false,
       required: true,
@@ -67,10 +67,10 @@ export default {
   },
   methods: {
     showAllEmit() {
-      this.$emit("update:showAll", true);
+      this.$emit("update:modelValue", true);
     },
     hideAllEmit() {
-      this.$emit("update:showAll", false);
+      this.$emit("update:modelValue", false);
     },
   },
 };

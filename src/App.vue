@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-screen-md mx-auto my-9 px-8 py-12 shadow-2xl shadow-black border-2 border-cyan-500 rounded-lg">
     <ModalDelete
-        v-model:show="modalDeleteVisible"
+        v-model="modalDeleteVisible"
         :task="pickedItem"
         @delete="deleteTask"
     />
@@ -19,7 +19,7 @@
       <DoneTaskList
           :tasks="tasks"
           :taskDone="taskDone"
-          v-model:showAll="showTasks"
+          v-model="showTasks"
           @isDone="isDone"
           @showModalDelete="showModalDelete"
       />
