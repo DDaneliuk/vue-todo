@@ -8,7 +8,11 @@
     <div class="task-block">
       <Header :header="header"/>
       <TaskList
-          :tasks="tasks" @isDone="isDone" @showModalDelete="showModalDelete"
+          :tasks="tasks"
+          v-model="contentEditable"
+          @isDone="isDone"
+          @newTitle="changeTask"
+          @showModalDelete="showModalDelete"
       />
       <TaskForm @create="createTask"/>
       <Counter
@@ -34,6 +38,7 @@ import TaskForm from "./components/TaskForm";
 import Header from "./components/Header";
 import ModalDelete from "./components/ModalDelete";
 import Counter from "./components/Counter";
+
 export default {
   components: {
     TaskForm,
@@ -54,6 +59,7 @@ export default {
       percentOfDone: 0,
       encodeData: "",
       showTasks: false,
+      contentEditable: false,
     };
   },
   created() {
@@ -72,6 +78,16 @@ export default {
       this.encode();
       this.decode();
       this.updateCounter();
+    },
+    changeTask(task, title){
+      let changeTask = this.tasks.find(t => t.id === task.id)
+      for (const obj of this.tasks){
+        if (obj.id === task.id){
+          obj.taskTitle = title
+          break
+        }
+      }
+      console.log(changeTask)
     },
     deleteTask(task) {
       this.tasks = this.tasks.filter((t) => t.id !== task.id);

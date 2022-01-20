@@ -11,7 +11,7 @@
         class="w-full grid grid-cols-task items-center py-4 px-2 rounded-lg bg-white transition-all ease-in-out duration-400 hover:bg-indigo-50"
         v-else>
       <a @click="isDone" class="w-4 h-4 block border-2 border-black align-middle justify-center"></a>
-      <p>{{ task.taskTitle }}</p>
+      <p contenteditable="true" @keyup="changeTask">{{ task.taskTitle }}</p>
       <button @click="showModalDelete">🗑</button>
     </div>
   </div>
@@ -35,6 +35,10 @@ export default {
     isDone() {
       this.$emit("isDone", this.task);
     },
+    changeTask(evt){
+      let newTitle = evt.target.innerText
+      this.$emit("newTitle", this.task, newTitle);
+    }
   },
 };
 </script>

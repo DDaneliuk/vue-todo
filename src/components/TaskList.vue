@@ -6,13 +6,13 @@
     >
       <Task
         :task="task"
+        @newTitle="changeTask"
         @delete="$emit('delete', task)"
         @isDone="$emit('isDone', task)"
         @showModalDelete="$emit('showModalDelete', task)"
         :key="task.id"
       />
     </div>
-    <ModalDelete />
   </div>
   <div v-else class="text-center px-0 py-8">
     <p>You don't have tasks to do.</p>
@@ -32,6 +32,11 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  methods: {
+    changeTask(task, title){
+      this.$emit("newTitle", task, title);
+    }
   },
 };
 </script>
