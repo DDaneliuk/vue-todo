@@ -9,7 +9,6 @@
       <Header :header="header"/>
       <TaskList
           :tasks="tasks"
-          v-model="contentEditable"
           @isDone="isDone"
           @newTitle="changeTask"
           @showModalDelete="showModalDelete"
@@ -79,15 +78,13 @@ export default {
       this.decode();
       this.updateCounter();
     },
-    changeTask(task, title){
-      let changeTask = this.tasks.find(t => t.id === task.id)
-      for (const obj of this.tasks){
-        if (obj.id === task.id){
+    changeTask(task, title) {
+      for (const obj of this.tasks) {
+        if (obj.id === task.id) {
           obj.taskTitle = title
           break
         }
       }
-      console.log(changeTask)
     },
     deleteTask(task) {
       this.tasks = this.tasks.filter((t) => t.id !== task.id);
