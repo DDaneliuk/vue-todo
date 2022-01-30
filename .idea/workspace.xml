@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="Update" />
+    <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server" beforeDir="false" afterPath="$PROJECT_DIR$/server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.development.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.production.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/nest-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/dto/create-task.dto.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.entity.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tsconfig.build.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tsconfig.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +78,7 @@
       <workItem from="1643295029473" duration="7777000" />
       <workItem from="1643401089739" duration="28000" />
       <workItem from="1643492578354" duration="1342000" />
-      <workItem from="1643546235892" duration="5524000" />
+      <workItem from="1643546235892" duration="5713000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>
@@ -83,7 +104,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
