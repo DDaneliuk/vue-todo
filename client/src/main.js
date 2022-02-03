@@ -1,6 +1,6 @@
-import { createApp, provide, h } from 'vue'
-import { DefaultApolloClient } from '@vue/apollo-composable'
+import { createApp, h } from 'vue'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
+import { createApolloProvider } from '@vue/apollo-option'
 import App from './App.vue'
 import "./index.css"
 
@@ -8,15 +8,17 @@ const cache = new InMemoryCache()
 
 const apolloClient = new ApolloClient({
     cache,
-    uri: '<https://rickandmortyapi.com/graphql>',
+    uri: 'http://localhost:5000/graphql',
+})
+
+const apolloProvider = createApolloProvider({
+    defaultClient: apolloClient,
 })
 
 const app = createApp({
-    setup () {
-        provide(DefaultApolloClient, apolloClient)
-    },
-
     render: () => h(App),
 })
+
+app.use(apolloProvider)
 
 app.mount('#app');

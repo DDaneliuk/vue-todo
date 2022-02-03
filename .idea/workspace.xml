@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
+      <change afterPath="$PROJECT_DIR$/client/.graphqlconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
       <workItem from="1643639358460" duration="1334000" />
       <workItem from="1643640860877" duration="3239000" />
       <workItem from="1643879574628" duration="4827000" />
-      <workItem from="1643890661983" duration="9158000" />
+      <workItem from="1643890661983" duration="13058000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-// import gql from "graphql-tag"
+import gql from "graphql-tag"
 import TaskList from "./components/TaskList";
 import DoneTaskList from "./components/DoneTaskList";
 import TaskForm from "./components/TaskForm";
@@ -40,6 +40,23 @@ import ModalDelete from "./components/ModalDelete";
 import Counter from "./components/Counter";
 
 export default {
+  apollo: {
+    todos: {
+      query: gql`
+        {
+          tasks {
+            id
+            taskTitle
+            isDone
+          }
+        }
+      `,
+      update(data) {
+        console.log(data)
+        return data.tasks;
+      },
+    },
+  },
   components: {
     TaskForm,
     TaskList,
