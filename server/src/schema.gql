@@ -13,10 +13,23 @@ type Query {
 }
 
 type Mutation {
+  """create new task"""
   createTask(createTaskInput: CreateTaskInput!): Task!
+
+  """update all content of task"""
+  updateTask(updateTaskInput: UpdateTaskInput!): Task!
+
+  """delete task"""
+  deleteTask(id: String!): Boolean!
 }
 
 input CreateTaskInput {
   taskTitle: String!
   isDone: Boolean!
+}
+
+input UpdateTaskInput {
+  id: String!
+  taskTitle: String
+  isDone: Boolean
 }

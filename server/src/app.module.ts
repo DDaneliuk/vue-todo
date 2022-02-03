@@ -14,6 +14,10 @@ import {join} from 'path';
         GraphQLModule.forRoot({
             playground: true,
             autoSchemaFile: join(process.cwd(), "src/schema.gql"),
+            cors: {
+                origin: 'http://localhost:8081',
+                credentials: true,
+            },
         }),
         ConfigModule.forRoot({envFilePath: `.${process.env.NODE_ENV}.env`}),
         TypeOrmModule.forRoot({
