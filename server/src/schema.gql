@@ -1,0 +1,22 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Task {
+  id: Int!
+  taskTitle: String!
+  isDone: Boolean!
+}
+
+type Query {
+  tasks: [Task!]!
+}
+
+type Mutation {
+  createTask(createTaskInput: CreateTaskInput!): Task!
+}
+
+input CreateTaskInput {
+  taskTitle: String!
+  isDone: Boolean!
+}

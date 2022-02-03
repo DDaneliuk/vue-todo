@@ -31,6 +31,7 @@
 </template>
 
 <script>
+// import gql from "graphql-tag"
 import TaskList from "./components/TaskList";
 import DoneTaskList from "./components/DoneTaskList";
 import TaskForm from "./components/TaskForm";

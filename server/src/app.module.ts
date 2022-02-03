@@ -1,16 +1,21 @@
 import {Module} from "@nestjs/common";
 import {AppController} from "./app.controller";
 import {AppService} from "./app.service";
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { TasksModule } from './tasks/tasks.module';
+import {GraphQLModule} from "@nestjs/graphql";
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {TasksModule} from './tasks/tasks.module';
 import {ConfigModule} from "@nestjs/config";
-import {Task} from "./tasks/tasks.entity";
+import {join} from 'path';
 
 @Module({
-    controllers:[AppController],
-    providers:[AppService],
-    imports:[
-        ConfigModule.forRoot({envFilePath:`.${process.env.NODE_ENV}.env`}),
+    controllers: [AppController],
+    providers: [AppService],
+    imports: [
+        GraphQLModule.forRoot({
+            playground: true,
+            autoSchemaFile: join(process.cwd(), "src/schema.gql"),
+        }),
+        ConfigModule.forRoot({envFilePath: `.${process.env.NODE_ENV}.env`}),
         TypeOrmModule.forRoot({
             type: 'postgres',
             host: process.env.POSTGRES_HOST,
@@ -18,11 +23,12 @@ import {Task} from "./tasks/tasks.entity";
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASS,
             database: process.env.POSTGRES_DB,
-            entities: [Task],
+            entities: ['dist/**/*.entity{.ts,.js}'],
             synchronize: true,
             autoLoadEntities: true,
         }),
         TasksModule
     ],
 })
-export class AppModule {}
+export class AppModule {
+}
