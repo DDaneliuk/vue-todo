@@ -2,10 +2,10 @@
   <form @submit.prevent>
     <div class="flex">
       <input
-        v-model="taskTitle"
-        type="text"
-        placeholder="New task..."
-        class="flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"
+          v-model="taskTitle"
+          type="text"
+          placeholder="New task..."
+          class="flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"
       />
       <button class="bg-indigo-500 text-white border-2 border-cyan-500 rounded-lg px-4 py-2" @click="createTask">Add
       </button>
@@ -22,6 +22,22 @@ export default {
       taskTitle: "",
     };
   },
+  apollo: {
+    allTasks: {
+      query: gql`
+        {
+          tasks {
+            id
+            taskTitle
+            isDone
+          }
+        }
+      `,
+      update(data) {
+        return data.tasks;
+      },
+    },
+  },
   methods: {
     async createTask() {
       try {
@@ -37,9 +53,10 @@ export default {
           variables: {
             taskTitle: this.taskTitle,
             isDone: false
-          }
-
+          },
         })
+        await this.$apollo.queries.allTasks.refetch();
+        this.taskTitle = ''
       } catch (e) {
         console.log(e)
       }

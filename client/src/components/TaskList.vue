@@ -52,10 +52,6 @@ export default {
       default: false,
     }
   },
-  methods: {
-    changeTask(task, title) {
-      this.$emit("newTitle", task, title);
-    },
-  },
+  methods: {  },
 };
 </script>

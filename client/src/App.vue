@@ -74,6 +74,7 @@ export default {
   },
   methods: {
     updateCounter() {
+      this.$apollo.queries.allTasks.refetch();
       this.taskAmount = this.allTasks.length;
       this.taskDone = this.allTasks.filter((item) => item.isDone === true).length;
       this.percentOfDone = Math.round((this.taskDone / this.taskAmount) * 100);

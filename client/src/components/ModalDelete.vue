@@ -29,9 +29,24 @@ export default {
       default: () => ({}),
     },
   },
+  apollo: {
+    allTasks: {
+      query: gql`
+        {
+          tasks {
+            id
+            taskTitle
+            isDone
+          }
+        }
+      `,
+      update(data) {
+        return data.tasks;
+      },
+    },
+  },
   methods: {
     hideModal() {
-      console.log("342424234")
       this.$emit("update:modelValue", false);
     },
     async deleteTask() {
@@ -46,6 +61,7 @@ export default {
             id: this.task.id
           }
         })
+        await this.$apollo.queries.allTasks.refetch();
         this.$emit("update:modelValue", false);
       } catch (e) {
         console.log(e)

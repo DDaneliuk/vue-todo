@@ -43,7 +43,6 @@ export default defineComponent({
       contentEdit.value = true
     }
     function saveChanges(evt) {
-      console.log(evt.target.innerText)
       contentEdit.value = false
       try{
         this.$apollo.mutate({
@@ -68,15 +67,15 @@ export default defineComponent({
     }
     async function isDone(){
       try{
-        this.$apollo.mutate({
-          mutation: gql `
+        await this.$apollo.mutate({
+          mutation: gql`
           mutation ($id: Float!, $isDone: Boolean!){
             updateTask(updateTaskInput: {id:$id, isDone: $isDone}){
                 id
                 isDone
             }
           }`,
-          variables:{
+          variables: {
             id: this.task.id,
             isDone: !this.task.isDone
           }
