@@ -25,7 +25,7 @@ export class TasksResolver {
     }
 
     @Mutation(() => Boolean, { description: "delete task" })
-    deleteTask(@Args('id') id: string){
+    deleteTask(@Args('id') id: number){
         return this.tasksService.deleteTask(id)
     }
 }

@@ -3,7 +3,7 @@
     <div v-if="modelValue">
       <div
           class="tasks"
-          v-for="task in tasks.filter((item) => item.isDone === true)"
+          v-for="task in allTasks.filter((item) => item.isDone === true)"
           :key="task.id"
       >
         <Task
@@ -21,7 +21,7 @@
     </div>
     <div v-else>
       <div
-          v-for="task in tasks.filter((item) => item.isDone === true).slice(0, 5)"
+          v-for="task in allTasks.filter((item) => item.isDone === true).slice(0, 5)"
           :key="task.id"
       >
         <Task
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import Task from "./Task";
 
 export default {
@@ -50,11 +51,28 @@ export default {
   components: {
     Task,
   },
-  props: {
-    tasks: {
-      type: Array,
-      required: true,
+  data() {
+    return{
+      allTasks: [],
+    }
+  },
+  apollo: {
+    allTasks: {
+      query: gql`
+        {
+          tasks {
+            id
+            taskTitle
+            isDone
+          }
+        }
+      `,
+      update(data) {
+        return data.tasks;
+      },
     },
+  },
+  props: {
     modelValue: {
       type: Boolean,
       default: false,

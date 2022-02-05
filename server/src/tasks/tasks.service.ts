@@ -31,7 +31,7 @@ export class TasksService {
 
     }
 
-    async updateTask(id: string, updateTaskInput: UpdateTaskInput): Promise<Task> {
+    async updateTask(id: number, updateTaskInput: UpdateTaskInput): Promise<Task> {
         try {
 
             const taskID = await this.tasksRepository.findOne({where: {id: id}});
@@ -48,7 +48,7 @@ export class TasksService {
         }
     }
 
-    async deleteTask(id: string): Promise<Boolean> {
+    async deleteTask(id: number): Promise<Boolean> {
         try {
             const task = await this.tasksRepository.delete(id)
             return true

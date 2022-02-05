@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
 import {defineComponent, ref} from "vue";
 
 export default defineComponent({
@@ -42,15 +43,47 @@ export default defineComponent({
       contentEdit.value = true
     }
     function saveChanges(evt) {
+      console.log(evt.target.innerText)
       contentEdit.value = false
-      let newTitle = evt.target.innerText
-      emit('newTitle', props.task, newTitle)
+      try{
+        this.$apollo.mutate({
+          mutation: gql `
+          mutation ($id: Float!, $taskTitle: String!){
+            updateTask(updateTaskInput: {id:$id, taskTitle: $taskTitle}){
+                id
+                taskTitle
+            }
+          }`,
+          variables:{
+            id: this.task.id,
+            taskTitle: evt.target.innerText
+          }
+        })
+      }catch(e){
+        console.log(e)
+      }
     }
     function showModalDelete(){
       emit('showModalDelete', props.task)
     }
-    function isDone(){
-      emit('isDone', props.task)
+    async function isDone(){
+      try{
+        this.$apollo.mutate({
+          mutation: gql `
+          mutation ($id: Float!, $isDone: Boolean!){
+            updateTask(updateTaskInput: {id:$id, isDone: $isDone}){
+                id
+                isDone
+            }
+          }`,
+          variables:{
+            id: this.task.id,
+            isDone: !this.task.isDone
+          }
+        })
+      } catch (e) {
+        console.log(e)
+      }
     }
     return {
       contentEdit,

@@ -6,7 +6,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class Task {
     @PrimaryGeneratedColumn()
     @Field(type => Int)
-    id: string;
+    id: number;
 
     @Column()
     @Field()

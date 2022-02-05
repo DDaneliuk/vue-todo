@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
+
 export default {
   name: "ModalDelete",
   props: {
@@ -29,10 +31,25 @@ export default {
   },
   methods: {
     hideModal() {
+      console.log("342424234")
       this.$emit("update:modelValue", false);
     },
-    deleteTask() {
-      this.$emit("delete", this.task);
+    async deleteTask() {
+      try {
+        await this.$apollo.mutate({
+          mutation: gql`
+          mutation ($id: Float!){
+            deleteTask(id: $id)
+            }
+          `,
+          variables: {
+            id: this.task.id
+          }
+        })
+        this.$emit("update:modelValue", false);
+      } catch (e) {
+        console.log(e)
+      }
     },
   },
 };

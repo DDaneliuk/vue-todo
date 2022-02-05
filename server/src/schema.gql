@@ -20,7 +20,7 @@ type Mutation {
   updateTask(updateTaskInput: UpdateTaskInput!): Task!
 
   """delete task"""
-  deleteTask(id: String!): Boolean!
+  deleteTask(id: Float!): Boolean!
 }
 
 input CreateTaskInput {
@@ -29,7 +29,7 @@ input CreateTaskInput {
 }
 
 input UpdateTaskInput {
-  id: String!
+  id: Float!
   taskTitle: String
   isDone: Boolean
 }

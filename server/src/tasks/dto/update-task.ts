@@ -4,7 +4,7 @@ import {Field, InputType} from '@nestjs/graphql';
 export class UpdateTaskInput {
 
     @Field()
-    id: string
+    id: number
 
     @Field({nullable: true})
     taskTitle?: string;
