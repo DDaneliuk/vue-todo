@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
-      <change afterPath="$PROJECT_DIR$/client/src/components/NavBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/taskpage/TasksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/form/Button.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/form/Input.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Counter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Counter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +94,7 @@
       <workItem from="1644144558799" duration="5000" />
       <workItem from="1644218961941" duration="4166000" />
       <workItem from="1644225566276" duration="453000" />
-      <workItem from="1644226058405" duration="6148000" />
+      <workItem from="1644226058405" duration="10512000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>
