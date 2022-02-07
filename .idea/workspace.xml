@@ -2,18 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
+      <change afterPath="$PROJECT_DIR$/client/src/components/NavBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/taskpage/TasksPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.graphqlconfig" beforeDir="false" afterPath="$PROJECT_DIR$/client/.graphqlconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Task.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TaskForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Counter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Counter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,17 +54,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nest-graphql-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/views/login" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Xiaomi\Desktop\vue-todo\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.Vue" />
     <property name="ts.external.directory.path" value="C:\Users\Xiaomi\Desktop\vue-todo\server\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client\src\views\login" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client\src\views\taskpage" />
       <recent name="C:\Users\Xiaomi\Desktop\vue-todo\server\src\tasks\graphql\types.ts" />
     </key>
   </component>
@@ -80,7 +95,12 @@
       <workItem from="1643879574628" duration="4827000" />
       <workItem from="1643890661983" duration="13058000" />
       <workItem from="1644075781673" duration="8621000" />
-      <workItem from="1644096845267" duration="4554000" />
+      <workItem from="1644096845267" duration="4749000" />
+      <workItem from="1644143504383" duration="67000" />
+      <workItem from="1644144558799" duration="5000" />
+      <workItem from="1644218961941" duration="4166000" />
+      <workItem from="1644225566276" duration="453000" />
+      <workItem from="1644226058405" duration="6148000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>
