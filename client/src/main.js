@@ -1,20 +1,9 @@
+import "./index.css"
 import { createApp, h } from 'vue'
-import { ApolloClient, InMemoryCache } from '@apollo/client/core'
-import { createApolloProvider } from '@vue/apollo-option'
+import store from './store/index'
 import App from './App.vue'
 import router from './router'
-import "./index.css"
-
-const cache = new InMemoryCache()
-
-const apolloClient = new ApolloClient({
-    cache,
-    uri: 'http://localhost:5000/graphql',
-})
-
-const apolloProvider = createApolloProvider({
-    defaultClient: apolloClient,
-})
+import apolloProvider from "./apollo";
 
 const app = createApp({
     render: () => h(App),
@@ -22,5 +11,6 @@ const app = createApp({
 
 app.use(apolloProvider)
 app.use(router)
+app.use(store)
 
 app.mount('#app');
