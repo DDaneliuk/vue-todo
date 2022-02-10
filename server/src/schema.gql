@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type User {
+  id: Int!
+  email: String!
+  password: String!
+}
+
 type Task {
   id: Int!
   taskTitle: String!
@@ -10,6 +16,7 @@ type Task {
 
 type Query {
   tasks: [Task!]!
+  users: [User!]!
 }
 
 type Mutation {
@@ -21,6 +28,9 @@ type Mutation {
 
   """delete task"""
   deleteTask(id: Float!): Boolean!
+
+  """create new user"""
+  createUser(createUserInput: CreateUserInput!): User!
 }
 
 input CreateTaskInput {
@@ -32,4 +42,9 @@ input UpdateTaskInput {
   id: Float!
   taskTitle: String
   isDone: Boolean
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
 }

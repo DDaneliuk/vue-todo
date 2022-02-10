@@ -6,9 +6,11 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {TasksModule} from './tasks/tasks.module';
 import {ConfigModule} from "@nestjs/config";
 import {join} from 'path';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import {CqrsModule} from "@nestjs/cqrs";
 
 @Module({
-    controllers: [AppController],
     providers: [AppService],
     imports: [
         GraphQLModule.forRoot({
@@ -31,8 +33,12 @@ import {join} from 'path';
             synchronize: true,
             autoLoadEntities: true,
         }),
-        TasksModule
+        TasksModule,
+        UsersModule,
+        AuthModule,
+        CqrsModule,
     ],
+    controllers:[AppController],
 })
 export class AppModule {
 }

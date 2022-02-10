@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
-      <change afterPath="$PROJECT_DIR$/client/src/components/form/Button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/form/Input.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/jwt-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/schema.gql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +55,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/views/login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nestjs-graphql" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Xiaomi\Desktop\vue-todo\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints.Vue" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
     <property name="ts.external.directory.path" value="C:\Users\Xiaomi\Desktop\vue-todo\server\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -94,7 +101,14 @@
       <workItem from="1644144558799" duration="5000" />
       <workItem from="1644218961941" duration="4166000" />
       <workItem from="1644225566276" duration="453000" />
-      <workItem from="1644226058405" duration="10512000" />
+      <workItem from="1644226058405" duration="10580000" />
+      <workItem from="1644306718818" duration="9226000" />
+      <workItem from="1644317435516" duration="809000" />
+      <workItem from="1644320540112" duration="11351000" />
+      <workItem from="1644332500020" duration="2387000" />
+      <workItem from="1644394561704" duration="1622000" />
+      <workItem from="1644396214533" duration="16371000" />
+      <workItem from="1644487017984" duration="6104000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>
@@ -134,6 +148,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/server" />
+    </ignored-roots>
     <MESSAGE value="Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
