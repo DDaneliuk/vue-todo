@@ -25,14 +25,14 @@ export class UsersService {
 
     async findAll(): Promise<User[]>{
         try{
-            return this.usersRepository.find()
+            return await this.usersRepository.find()
         }catch (e) {
             console.log(e)
         }
     }
     async getUser(email: string): Promise<User>{
         try{
-            const user = this.usersRepository.findOne({where: {email:email}})
+            const user = await this.usersRepository.findOne({where: {email:email}})
             console.log(user)
             return user
         }catch (e) {

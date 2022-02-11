@@ -7,6 +7,7 @@ import {TasksResolver} from './tasks.resolver';
 @Module({
     providers: [TasksService, TasksResolver],
     imports: [TypeOrmModule.forFeature([Task])],
+    exports: [TasksService]
 })
 export class TasksModule {
 }

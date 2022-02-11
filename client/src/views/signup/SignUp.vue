@@ -3,7 +3,7 @@
     <Header :header="header"/>
     <form class="my-8">
       <input v-model="email" type="email" placeholder="Email"
-             class="w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none" required/>
+             class="w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"/>
       <input v-model="password" type="password" placeholder="Password"
              class=" w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none" required/>
       <div v-if="errorForm.length">

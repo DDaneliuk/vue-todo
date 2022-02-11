@@ -12,11 +12,11 @@ export class UsersResolver {
         return this.usersService.findAll()
     }
 
-    // @Query(() => [User])
-    // getUser(@Args('email') email: string): Promise<User> {
-    //     return this.usersService.getUser(email);
-    // }
-    //
+    @Query(() => [User])
+    getUser(@Args('email') email: string): Promise<User> {
+        return this.usersService.getUser(email);
+    }
+
     @Mutation(returns => User, {description:"create new user"})
     createUser(@Args('createUserInput') createUserInput: CreateUserInput): Promise<User>{
         return this.usersService.createUser(createUserInput)

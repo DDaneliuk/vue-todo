@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
-      <change afterPath="$PROJECT_DIR$/client/src/apollo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/modules/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/modules/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/schema.gql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +111,8 @@
       <workItem from="1644394561704" duration="1622000" />
       <workItem from="1644396214533" duration="16371000" />
       <workItem from="1644487017984" duration="12652000" />
+      <workItem from="1644572201037" duration="10468000" />
+      <workItem from="1644604604031" duration="6067000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>

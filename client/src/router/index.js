@@ -6,7 +6,7 @@ import store from '../store/index'
 
 const routes = [
     {
-        path: '/',
+        path: '/tasks',
         name: 'TasksPage',
         component: TasksPage,
         meta: {requiresAuth: true}
@@ -27,9 +27,8 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes
 })
-
 router.beforeEach((to) => {
-    if(to.meta.requiresAuth && store.state.user.user ){
+    if(to.meta.requiresAuth && !store.state.user.token ){
         return {name: 'Login'}
     }
 })
