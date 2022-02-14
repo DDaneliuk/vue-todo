@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import {mapMutations} from "vuex";
-
+import { GC_USER_ID, GC_AUTH_TOKEN } from '@/constants/settings'
 export default {
   name: "NavBar",
   methods: {
-    ...mapMutations(["setToken"]),
     async logout() {
-      this.setToken(null);
+      localStorage.setItem(GC_USER_ID, null)
+      localStorage.setItem(GC_AUTH_TOKEN, null)
       await this.$router.push("/login");
     }
   }

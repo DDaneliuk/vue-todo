@@ -33,7 +33,6 @@ export class UsersService {
     async getUser(email: string): Promise<User>{
         try{
             const user = await this.usersRepository.findOne({where: {email:email}})
-            console.log(user)
             return user
         }catch (e) {
             console.log(e)

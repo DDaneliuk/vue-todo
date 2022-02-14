@@ -7,4 +7,7 @@ export class CreateTaskInput {
 
     @Field()
     isDone: boolean;
+
+    @Field()
+    userId: number;
 }

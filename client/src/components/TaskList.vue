@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import {GC_USER_ID} from '../constants/settings'
 import gql from 'graphql-tag';
 import Task from './Task';
 
@@ -25,7 +26,7 @@ export default {
   components: {
     Task,
   },
-  data(){
+  data() {
     return {
       allTasks: [],
     }
@@ -33,14 +34,17 @@ export default {
   apollo: {
     allTasks: {
       query: gql`
-        {
-          tasks {
+        query tasks($userId: Float!){
+          tasks (showTasks: {userId: $userId}){
             id
             taskTitle
             isDone
           }
         }
       `,
+      variables: {
+        userId: +localStorage.getItem(GC_USER_ID)
+      },
       update(data) {
         return data.tasks;
       },
@@ -52,6 +56,6 @@ export default {
       default: false,
     }
   },
-  methods: {  },
+  methods: {},
 };
 </script>

@@ -7,7 +7,6 @@
       <input type="text" placeholder="Password" v-model="password"
              class=" w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"/>
       <div v-if="errorForm.length">
-        <b>Fill all inputs for log in, and try again</b>
         <ul v-for="error in errorForm" :key="error">
           <li>{{ error }}</li>
         </ul>
@@ -24,8 +23,11 @@
   <router-view/>
 </template>
 <script>
+import router from "@/router";
+import { GC_USER_ID, GC_AUTH_TOKEN } from '@/constants/settings'
 import {mapMutations} from "vuex";
 import Header from '../../components/Header.vue'
+import gql from "graphql-tag";
 
 export default {
   name: 'LoginPage',
@@ -47,24 +49,30 @@ export default {
       this.errorForm = []
       if (this.email && this.password) {
         try {
-          const response = await fetch("http://localhost:5000/auth/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
+          const { data } = await this.$apollo.mutate({
+            mutation: gql`
+            mutation($input: LoginUserInput!){
+                login(loginUserInput: $input){
+                  user{
+                    id
+                    email
+                  }
+                  access_token
+                }
+            }`,
+            variables: {
+              input:{
+                email:this.email,
+                password:this.password,
+              }
             },
-            body: JSON.stringify({
-              email: this.email,
-              password: this.password,
-            })
           })
-          if (response.status === 401){
-            this.errorForm.push('Wrong email or password')
-          }
-          const {access_token} = await response.json();
-          this.setToken(access_token);
-          await this.$router.push("/tasks");
+          localStorage.setItem(GC_USER_ID, data.login.user.id)
+          localStorage.setItem(GC_AUTH_TOKEN, data.login.access_token)
+          await router.push("/")
         } catch (e) {
           console.log(e)
+          this.errorForm.push(e.message)
         }
       } else {
         if (!this.email) {

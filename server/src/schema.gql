@@ -14,10 +14,19 @@ type Task {
   isDone: Boolean!
 }
 
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
 type Query {
-  tasks: [Task!]!
+  tasks(showTasks: ShowTasks!): [Task!]!
   users: [User!]!
   getUser(email: String!): [User!]!
+}
+
+input ShowTasks {
+  userId: Float!
 }
 
 type Mutation {
@@ -30,19 +39,28 @@ type Mutation {
   """delete task"""
   deleteTask(id: Float!): Boolean!
 
-  """create new user"""
+  """user login"""
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+
+  """user sign up"""
   createUser(createUserInput: CreateUserInput!): User!
 }
 
 input CreateTaskInput {
   taskTitle: String!
   isDone: Boolean!
+  userId: Float!
 }
 
 input UpdateTaskInput {
   id: Float!
   taskTitle: String
   isDone: Boolean
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
 }
 
 input CreateUserInput {

@@ -4,6 +4,7 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
 import {CreateTaskInput} from "./dto/create-task.input";
 import {UpdateTaskInput} from "./dto/update-task";
+import {ShowTasks} from "./dto/show-tasks.input";
 
 @Injectable()
 export class TasksService {
@@ -12,7 +13,7 @@ export class TasksService {
 
     createTask(createTaskInput: CreateTaskInput): Promise<Task> {
         try {
-            const newTask = this.tasksRepository.create(createTaskInput); // newTask = new Task(); new.taskTitle = input.taskTitle
+            const newTask = this.tasksRepository.create(createTaskInput);
             return this.tasksRepository.save(newTask) // insert task to db
         } catch (e) {
             console.log("Error - creating task", e)
@@ -21,9 +22,9 @@ export class TasksService {
 
     }
 
-    async findAll(): Promise<Task[]> {
+    async findAll(showTasks: ShowTasks): Promise<Task[]> {
         try {
-            return this.tasksRepository.find(); // SELECT * FROM tasks
+            return this.tasksRepository.find({where: {userId: showTasks.userId}}); // SELECT * FROM tasks
         } catch (e) {
             console.log("Error - finding all tasks", e)
             throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
@@ -37,12 +38,10 @@ export class TasksService {
 
             const taskID = await this.tasksRepository.findOne({where: {id: id}});
 
-            const updatedTask = await this.tasksRepository.save({
+            return await this.tasksRepository.save({
                 ...taskID,
                 ...updateTaskInput
             });
-
-            return updatedTask;
         } catch (e) {
             console.log("Error - updating task", e)
             throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
@@ -51,7 +50,7 @@ export class TasksService {
 
     async deleteTask(id: number): Promise<Boolean> {
         try {
-            const task = await this.tasksRepository.delete(id)
+            await this.tasksRepository.delete(id)
             return true
         } catch (e) {
             console.log("Error - deleting task", e)
@@ -59,4 +58,4 @@ export class TasksService {
         }
 
     }
-};
+}

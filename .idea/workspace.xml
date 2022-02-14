@@ -2,16 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
+      <change afterPath="$PROJECT_DIR$/client/src/apollo-link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/constants/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/auth.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/current-user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/dto/create-user.input.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/dto/login-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/dto/login-user.input.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/auth/gql-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/tasks/dto/show-tasks.input.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/apollo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/apollo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/DoneTaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DoneTaskList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/TaskForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/TaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/modules/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/signup/SignUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/local.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/local.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/schema.gql" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/schema.gql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/dto/create-task.input.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/dto/create-task.input.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/users/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/users/users.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/users/users.resolver.ts" afterDir="false" />
@@ -57,12 +79,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nestjs-graphql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Xiaomi\Desktop\vue-todo\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="C:\Users\Xiaomi\Desktop\vue-todo\server\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -71,6 +93,8 @@
       <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client\src\views\login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client\src" />
+      <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client" />
       <recent name="C:\Users\Xiaomi\Desktop\vue-todo\client\src\views\taskpage" />
       <recent name="C:\Users\Xiaomi\Desktop\vue-todo\server\src\tasks\graphql\types.ts" />
     </key>
@@ -112,7 +136,11 @@
       <workItem from="1644396214533" duration="16371000" />
       <workItem from="1644487017984" duration="12652000" />
       <workItem from="1644572201037" duration="10468000" />
-      <workItem from="1644604604031" duration="6067000" />
+      <workItem from="1644604604031" duration="6152000" />
+      <workItem from="1644645248631" duration="989000" />
+      <workItem from="1644649658756" duration="862000" />
+      <workItem from="1644669387163" duration="360000" />
+      <workItem from="1644773333915" duration="31717000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>

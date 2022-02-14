@@ -16,6 +16,7 @@
 
 <script>
 import gql from 'graphql-tag'
+import {GC_USER_ID} from "@/constants/settings";
 
 export default {
   name: "ModalDelete",
@@ -32,14 +33,19 @@ export default {
   apollo: {
     allTasks: {
       query: gql`
-        {
-          tasks {
+        query tasks($input: ShowTasks!){
+          tasks (showTasks: $input){
             id
             taskTitle
             isDone
           }
         }
       `,
+      variables:{
+        input: {
+          userId: +localStorage.getItem(GC_USER_ID)
+        }
+      },
       update(data) {
         return data.tasks;
       },

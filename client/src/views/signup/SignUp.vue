@@ -7,13 +7,12 @@
       <input v-model="password" type="password" placeholder="Password"
              class=" w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none" required/>
       <div v-if="errorForm.length">
-        <b>Fill all inputs before signing up. And try again</b>
       <ul v-for="error in errorForm" :key="error">
         <li  >{{ error }}</li>
       </ul>
       </div>
       <div class="flex justify-center mt-8 mb-0">
-        <button @click="signUp" class="bg-indigo-500  text-white border-2 border-cyan-500 rounded-lg px-4 py-2"
+        <button @click="(e) => signUp(e)" class="bg-indigo-500  text-white border-2 border-cyan-500 rounded-lg px-4 py-2"
                 type="button">Sign Up
         </button>
 
@@ -44,7 +43,8 @@ export default {
     }
   },
   methods: {
-    async signUp() {
+    async signUp(e) {
+      e.preventDefault()
       this.errorForm = []
       if (this.email && this.password) {
         try {
@@ -66,6 +66,7 @@ export default {
           this.password = '';
           await router.push("/login")
         } catch (e) {
+          this.errorForm.push(e.message)
           console.log(e)
         }
       } else {

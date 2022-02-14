@@ -2,11 +2,11 @@ import {createRouter, createWebHistory} from "vue-router";
 import TasksPage from '../views/taskpage/TasksPage.vue'
 import Login from '../views/login/Login.vue'
 import SignUp from '../views/signup/SignUp.vue'
-import store from '../store/index'
+// import store from '../store/index'
 
 const routes = [
     {
-        path: '/tasks',
+        path: '/',
         name: 'TasksPage',
         component: TasksPage,
         meta: {requiresAuth: true}
@@ -28,7 +28,8 @@ const router = createRouter({
     routes
 })
 router.beforeEach((to) => {
-    if(to.meta.requiresAuth && !store.state.user.token ){
+    const token = localStorage.getItem('graphql-auth-token')
+    if(to.meta.requiresAuth && !token ){
         return {name: 'Login'}
     }
 })

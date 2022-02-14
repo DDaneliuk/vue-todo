@@ -1,5 +1,6 @@
 import {Field, Int, ObjectType} from "@nestjs/graphql";
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {Task} from "../tasks/tasks.entity";
 
 @Entity()
 @ObjectType()
@@ -15,4 +16,7 @@ export class User{
     @Column()
     @Field()
     password: string;
+
+    @OneToMany(() => Task, task => task.user)
+    task: Task[];
 }

@@ -3,6 +3,9 @@ import {TasksService} from "./tasks.service";
 import {Task} from "./tasks.entity";
 import {CreateTaskInput} from "./dto/create-task.input";
 import {UpdateTaskInput} from "./dto/update-task";
+import {UseGuards} from "@nestjs/common";
+import {GqlAuthGuard} from "../auth/gql-auth.guard";
+import {ShowTasks} from "./dto/show-tasks.input";
 
 @Resolver(of => Task)
 export class TasksResolver {
@@ -10,8 +13,9 @@ export class TasksResolver {
     }
 
     @Query(() => [Task])
-    tasks(): Promise<Task[]> {
-        return this.tasksService.findAll()
+    @UseGuards(GqlAuthGuard)
+    tasks(@Args('showTasks') showTasks: ShowTasks): Promise<Task[]> {
+        return this.tasksService.findAll(showTasks)
     }
 
     @Mutation(returns => Task, {description: "create new task"})

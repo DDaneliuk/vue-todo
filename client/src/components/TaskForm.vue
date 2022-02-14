@@ -15,6 +15,7 @@
 
 <script>
 import gql from 'graphql-tag'
+import {GC_USER_ID} from "@/constants/settings";
 
 export default {
   data() {
@@ -25,14 +26,19 @@ export default {
   apollo: {
     allTasks: {
       query: gql`
-        {
-          tasks {
+        query tasks($input: ShowTasks!){
+          tasks (showTasks: $input){
             id
             taskTitle
             isDone
           }
         }
       `,
+      variables:{
+        input: {
+          userId: +localStorage.getItem(GC_USER_ID)
+        }
+      },
       update(data) {
         return data.tasks;
       },
@@ -40,11 +46,12 @@ export default {
   },
   methods: {
     async createTask() {
+      const userId = +localStorage.getItem(GC_USER_ID) // convert to number
       try {
         await this.$apollo.mutate({
           mutation: gql`
-          mutation ($taskTitle: String!, $isDone: Boolean!){
-            createTask(createTaskInput: {taskTitle: $taskTitle, isDone: $isDone}){
+          mutation ($taskTitle: String!, $isDone: Boolean!, $userId: Float!){
+            createTask(createTaskInput: {taskTitle: $taskTitle, isDone: $isDone, userId: $userId}){
                 id
                 taskTitle
                 isDone
@@ -52,7 +59,8 @@ export default {
           }`,
           variables: {
             taskTitle: this.taskTitle,
-            isDone: false
+            isDone: false,
+            userId: userId,
           },
         })
         await this.$apollo.queries.allTasks.refetch();
