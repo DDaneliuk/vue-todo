@@ -21,7 +21,12 @@ export default {
   data() {
     return {
       taskTitle: "",
+      userId: +localStorage.getItem(GC_USER_ID),
     };
+  },
+  created() {
+    this.$apollo.queries.allTasks.refetch();
+    this.userId = +localStorage.getItem(GC_USER_ID)
   },
   apollo: {
     allTasks: {

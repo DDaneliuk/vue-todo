@@ -11,7 +11,7 @@
           @showModalDelete="showModalDelete"
       />
       <TaskForm/>
-      <Counter/>
+<!--      <Counter/>-->
       <DoneTaskList
           :taskDone="taskDone"
           v-model="showTasks"
@@ -23,32 +23,32 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
+// import gql from "graphql-tag"
 import NavBar from "../../components/NavBar";
 import TaskList from "../../components/TaskList";
 import DoneTaskList from "../../components/DoneTaskList";
 import TaskForm from "../../components/TaskForm";
 import Header from "../../components/Header";
 import ModalDelete from "../../components/ModalDelete";
-import Counter from "../../components/Counter";
+// import Counter from "../../components/Counter";          // TODO Counter
 
 export default {
-  apollo: {
-    allTasks: {
-      query: gql`
-        {
-          tasks {
-            id
-            taskTitle
-            isDone
-          }
-        }
-      `,
-      update(data) {
-        return data.tasks;
-      },
-    },
-  },
+  // apollo: {
+  //   allTasks: {
+  //     query: gql`
+  //       {
+  //         tasks {
+  //           id
+  //           taskTitle
+  //           isDone
+  //         }
+  //       }
+  //     `,
+  //     update(data) {
+  //       return data.tasks;
+  //     },
+  //   },
+  // },
   components: {
     NavBar,
     TaskForm,
@@ -56,11 +56,11 @@ export default {
     DoneTaskList,
     ModalDelete,
     Header,
-    Counter,
+    // Counter,
   },
   data() {
     return {
-      allTasks: [],
+      // allTasks: [],
       modalDeleteVisible: false,
       pickedItem: {},
       header: "Task list",

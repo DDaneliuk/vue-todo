@@ -8,12 +8,20 @@
 
 <script>
 import { GC_USER_ID, GC_AUTH_TOKEN } from '@/constants/settings'
+import {mapMutations} from "vuex";
+import {apolloClient} from '@/apollo'
+
+
+
 export default {
   name: "NavBar",
   methods: {
+    ...mapMutations(["setUser"]),
     async logout() {
-      localStorage.setItem(GC_USER_ID, null)
-      localStorage.setItem(GC_AUTH_TOKEN, null)
+      await this.setUser(null);
+      await localStorage.setItem(GC_USER_ID, null)
+      await localStorage.setItem(GC_AUTH_TOKEN, null)
+      await apolloClient.cache.reset()
       await this.$router.push("/login");
     }
   }

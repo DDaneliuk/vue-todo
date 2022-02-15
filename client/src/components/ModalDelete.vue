@@ -30,6 +30,11 @@ export default {
       default: () => ({}),
     },
   },
+  data() {
+    return {
+      taskTitle: "",
+    };
+  },
   apollo: {
     allTasks: {
       query: gql`

@@ -58,6 +58,7 @@ export default defineComponent({
             taskTitle: evt.target.innerText
           }
         })
+        this.$apollo.queries.tasks.refetch();
       }catch(e){
         console.log(e)
       }

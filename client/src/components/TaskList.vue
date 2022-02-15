@@ -17,11 +17,12 @@
 </template>
 
 <script>
-import {GC_USER_ID} from '../constants/settings'
+import {defineComponent} from "vue";
 import gql from 'graphql-tag';
 import Task from './Task';
+import {GC_USER_ID} from "@/constants/settings";
 
-export default {
+export default defineComponent({
   name: "TaskList",
   components: {
     Task,
@@ -29,21 +30,29 @@ export default {
   data() {
     return {
       allTasks: [],
+      userId: +localStorage.getItem(GC_USER_ID)
     }
+  },
+  created() {
+    this.$apollo.queries.allTasks.refetch();
+    this.userId = +localStorage.getItem(GC_USER_ID)
+    console.log(this.userId)
   },
   apollo: {
     allTasks: {
       query: gql`
-        query tasks($userId: Float!){
-          tasks (showTasks: {userId: $userId}){
+        query tasks($input: ShowTasks!){
+          tasks (showTasks: $input){
             id
             taskTitle
             isDone
           }
         }
       `,
-      variables: {
-        userId: +localStorage.getItem(GC_USER_ID)
+      variables() {
+        return {
+          input: {userId: this.userId}
+        }
       },
       update(data) {
         return data.tasks;
@@ -57,5 +66,5 @@ export default {
     }
   },
   methods: {},
-};
+});
 </script>

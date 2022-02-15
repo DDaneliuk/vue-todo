@@ -27,7 +27,6 @@ export class AuthService {
 
     async login(loginUserInput: LoginUserInput) {
         const user = await this.usersService.getUser(loginUserInput.email)
-        console.log(user)
         if(user){
             const {password, ...result} = user;
             const payload = {email: user.email, id: user.id};

@@ -55,6 +55,7 @@ export default {
   data() {
     return{
       allTasks: [],
+      userId: +localStorage.getItem(GC_USER_ID),
     }
   },
   apollo: {
@@ -68,9 +69,11 @@ export default {
           }
         }
       `,
-      variables:{
-        input: {
-          userId: +localStorage.getItem(GC_USER_ID)
+      variables(){
+        return{
+          input: {
+            userId: this.userId
+          }
         }
       },
       update(data) {

@@ -4,7 +4,7 @@
     <form class="my-8">
       <input type="text" placeholder="Email" v-model="email"
              class="w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"/>
-      <input type="text" placeholder="Password" v-model="password"
+      <input type="password" placeholder="Password" v-model="password"
              class=" w-full block my-8 flex-1 border-b-2 border-cyan-500 text-black focus:outline-none"/>
       <div v-if="errorForm.length">
         <ul v-for="error in errorForm" :key="error">
@@ -43,7 +43,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(["setToken"]),
+    ...mapMutations(["setUser"]),
     async login(e) {
       e.preventDefault()
       this.errorForm = []
@@ -67,8 +67,9 @@ export default {
               }
             },
           })
-          localStorage.setItem(GC_USER_ID, data.login.user.id)
-          localStorage.setItem(GC_AUTH_TOKEN, data.login.access_token)
+          await this.setUser(data.login.user.id);
+          await localStorage.setItem(GC_USER_ID, data.login.user.id)
+          await localStorage.setItem(GC_AUTH_TOKEN, data.login.access_token)
           await router.push("/")
         } catch (e) {
           console.log(e)

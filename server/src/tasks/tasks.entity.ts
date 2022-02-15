@@ -9,7 +9,9 @@ export class Task {
     @Field(type => Int)
     id: number;
 
-    @Column()
+    @Column({
+        nullable: true,
+    })
     @Field()
     taskTitle: string;
 
