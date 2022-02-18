@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3c639e8f-1262-4584-9d0c-47b3ec3d136a" name="Changes" comment="rename branch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/apollo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/apollo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DoneTaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DoneTaskList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ModalDelete.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Task.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/TaskForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/apollo-link.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/apollo-link.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/TaskList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TaskList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/modules/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/taskpage/TasksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/taskpage/TasksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/tasks/tasks.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/tasks/tasks.entity.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +68,18 @@
       <recent name="C:\Users\Xiaomi\Desktop\vue-todo\server\src\tasks\graphql\types.ts" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="start:dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -118,7 +122,16 @@
       <workItem from="1644649658756" duration="862000" />
       <workItem from="1644669387163" duration="360000" />
       <workItem from="1644773333915" duration="31717000" />
-      <workItem from="1644908040481" duration="21937000" />
+      <workItem from="1644908040481" duration="23337000" />
+      <workItem from="1644995889895" duration="922000" />
+      <workItem from="1644997936718" duration="8579000" />
+      <workItem from="1645016687840" duration="1195000" />
+      <workItem from="1645023774619" duration="1484000" />
+      <workItem from="1645026693735" duration="493000" />
+      <workItem from="1645092438598" duration="19000" />
+      <workItem from="1645092630491" duration="37000" />
+      <workItem from="1645108838739" duration="1327000" />
+      <workItem from="1645173018924" duration="5305000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1643554053330</created>

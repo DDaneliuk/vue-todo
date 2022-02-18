@@ -21,7 +21,6 @@ import {defineComponent} from "vue";
 import gql from 'graphql-tag';
 import Task from './Task';
 import {GC_USER_ID} from "@/constants/settings";
-
 export default defineComponent({
   name: "TaskList",
   components: {

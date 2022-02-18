@@ -27,27 +27,31 @@ export class AuthService {
 
     async login(loginUserInput: LoginUserInput) {
         const user = await this.usersService.getUser(loginUserInput.email)
-        if(user){
+        if (user) {
             const {password, ...result} = user;
-            const payload = {email: user.email, id: user.id};
-            return {
-                access_token: this.jwtService.sign(payload),
-                user: result,
+            const isMatchPass = await bcrypt.compare(loginUserInput.password, password)
+            if (isMatchPass) {
+                const {password, email, ...rest} = user
+                const payload = {email: user.email, id: user.id};
+                return {
+                    access_token: this.jwtService.sign(payload),
+                    user: result,
+                }
+            } else {
+                throw new HttpException('Wrong password', HttpStatus.FORBIDDEN)
             }
-        }
-        else{
+        } else {
             throw new HttpException('User is not register', HttpStatus.FORBIDDEN)
         }
 
     }
 
     async createUser(createUserInput: CreateUserInput) {
-            const checkUser = await this.usersService.getUser(createUserInput.email)
-            if (!checkUser){
-                return this.usersService.createUser(createUserInput);
-            }
-            else {
-                throw new HttpException('User already exists', HttpStatus.FORBIDDEN)
+        const checkUser = await this.usersService.getUser(createUserInput.email)
+        if (!checkUser) {
+            return this.usersService.createUser(createUserInput);
+        } else {
+            throw new HttpException('User already exists', HttpStatus.FORBIDDEN)
         }
     }
 }

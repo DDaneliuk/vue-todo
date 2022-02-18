@@ -1,11 +1,15 @@
 import "./index.css"
-import { createApp, h } from 'vue'
+import {createApp, h, provide} from 'vue'
 import store from './store/index'
 import App from './App.vue'
 import router from './router'
-import apolloProvider from "./apollo";
+import apolloProvider, {apolloClient} from "./apollo";
+import {DefaultApolloClient} from "@vue/apollo-composable";
 
 const app = createApp({
+    setup () {
+        provide(DefaultApolloClient, apolloClient)
+    },
     render: () => h(App),
 })
 
